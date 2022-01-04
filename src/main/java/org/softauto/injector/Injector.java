@@ -5,6 +5,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.softauto.core.ClassType;
 import org.softauto.core.Utils;
+import org.softauto.jvm.HeapHelper;
 
 /**
  * Injector  new class instance
@@ -36,4 +37,17 @@ public class Injector  {
         return null;
     }
 
+    public Object[] getInstances(String fullClassName){
+        try{
+            Class c = Utils.findClass(fullClassName) ;
+            return HeapHelper.getInstances(c);
+        }catch (Exception e){
+            logger.error("fail getting class in jvm " + fullClassName);
+        }
+        return null;
+    }
+
+    public void executeGC(){
+        HeapHelper.clean();
+    }
 }
