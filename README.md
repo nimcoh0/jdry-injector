@@ -5,7 +5,8 @@ to inject class :
     Object[] inject(String fullClassName,Object[] args,Class[] types,ClassType classType)
 
 **classType** :
-	SINGLETON,  
+
+SINGLETON,  
 INITIALIZE,  
 INITIALIZE_NO_PARAM
 
