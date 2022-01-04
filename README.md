@@ -1,12 +1,11 @@
-The injector inject Class and Filed   .
+The injector inject Class and Filed at a remount Jvm  .
 
 to inject class :
 
     Object[] inject(String fullClassName,Object[] args,Class[] types,ClassType classType)
 
 **classType** :
-
-SINGLETON,  
+	SINGLETON,  
 INITIALIZE,  
 INITIALIZE_NO_PARAM
 
@@ -25,9 +24,16 @@ to inject field :
     Object inject(String fullClassName,String var,Object value)
 
 **var** : it's the field name
-
 **value** : it's the value yo assign to this field ; 
 
 example :
 
     injector.inject(fullClassName,varname,value);
+
+to get list of existing instance of class in the jvm 
+
+    Object[] objects =  injector.getInstances(fullClassName);
+
+to execute GC 
+
+    injector.executeGC();
