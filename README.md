@@ -5,7 +5,8 @@ to inject class :
     Object[] inject(String fullClassName,Object[] args,Class[] types,ClassType classType)
 
 **classType** :
-	SINGLETON,  
+
+SINGLETON,  
 INITIALIZE,  
 INITIALIZE_NO_PARAM
 
@@ -24,6 +25,7 @@ to inject field :
     Object inject(String fullClassName,String var,Object value)
 
 **var** : it's the field name
+
 **value** : it's the value yo assign to this field ; 
 
 example :
