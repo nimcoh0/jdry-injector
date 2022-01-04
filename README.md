@@ -25,6 +25,7 @@ to inject field :
     Object inject(String fullClassName,String var,Object value)
 
 **var** : it's the field name
+
 **value** : it's the value yo assign to this field ; 
 
 example :
