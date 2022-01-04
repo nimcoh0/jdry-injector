@@ -1,4 +1,4 @@
-The injector inject Class and Filed at a remount Jvm  .
+The injector inject Class and Filed  . can use exist class instance in the jvm 
 
 to inject class :
 
