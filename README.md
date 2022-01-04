@@ -4,6 +4,11 @@ to inject class :
 
     Object[] inject(String fullClassName,Object[] args,Class[] types,ClassType classType)
 
+> if *enable_session* == true  it will first look at the jvm and if
+> found (instance's  of this class) will return the first occurrence
+
+ 
+
 **classType** :
 
 SINGLETON,  
@@ -25,7 +30,6 @@ to inject field :
     Object inject(String fullClassName,String var,Object value)
 
 **var** : it's the field name
-
 **value** : it's the value yo assign to this field ; 
 
 example :
@@ -39,3 +43,11 @@ to get list of existing instance of class in the jvm
 to execute GC 
 
     injector.executeGC();
+
+
+## Configuration
+
+will load if found configuration.yaml at the root of the project .
+
+## Default configuration
+enable_session == true
