@@ -105,29 +105,7 @@ public class ServerService {
             return new Object[]{obj};
         }
 
-        /*
-        @Override
-        public Object[] invoke(String fullClassName, Object[] args,Class[] types) {
-            Object obj = null;
-            try {
-                Class c = Class.forName(fullClassName);
-                if(Configuration.get(Context.ENABLE_SESSION).asBoolean()){
-                    Object[] objects = HeapHelper.getInstances(c);
-                    if(objects != null && objects.length > 0){
-                        logger.debug("found "+objects.length+" instances in jvm. for class "+ fullClassName);
-                        return objects;
-                    }
-                }
-                Constructor constructor = c.getDeclaredConstructor(types);
-                obj  = constructor.newInstance(args);
-                logger.debug("invoke Initialize class "+fullClassName + "with ares "+Utils.result2String(args) + "and types "+Utils.result2String(types));
-            }catch (Exception e){
-                logger.warn("fail get Instance Class for  "+fullClassName,e.getMessage());
-            }
-            return new Object[]{obj};
-        }
 
-         */
     }
 
     /**
@@ -167,8 +145,7 @@ public class ServerService {
                    objects = HeapHelper.getInstances(c);
                    if(objects != null && objects.length > 0){
                        logger.debug("found "+objects.length+" instances in jvm. for class "+ fullClassName);
-                       //Object o = objects[0].getClass().getDeclaredField(var).get(null);
-                      for(Field field : objects[0].getClass().getDeclaredFields()){
+                       for(Field field : objects[0].getClass().getDeclaredFields()){
                           if(field.getName().equals(var)){
                               field.setAccessible(true);
                               field.set(objects[0], value);
